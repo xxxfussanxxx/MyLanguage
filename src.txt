@@ -1,0 +1,21 @@
+/*
+ * キャラクターを上下左右に移動するプログラム
+ */
+set Charactor "A"
+	spawn 250#250
+
+move Up
+	key "w"
+	go 10
+
+move Down
+	key "s"
+	go -10
+
+move Left
+	key "a"
+	go 3 + 7 * 1
+
+move Right
+	key "d"
+	go 26 / 2 - 3

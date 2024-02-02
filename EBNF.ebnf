@@ -1,0 +1,47 @@
+MyLanguage ::= Statements
+
+Statements ::= Statement 
+             | Statements Statement
+
+Statement ::= SetCharactor
+            | Move
+
+SetCharactor ::= set Charactor '"' Alphabet '"' SetAttribute
+
+SetAttribute ::= spawn Point
+
+Point ::= Integer "#" Integer
+
+Move ::= Up | Down | Left | Right
+
+Up ::= move Up MoveAttribute
+
+Down ::= move Down MoveAttribute
+
+Left ::= move Left MoveAttribute
+
+Right ::= move Right MoveAttribute
+
+MoveAttribute ::= key '"' Alphabet '"' go Expression
+
+Expression ::= Expression "+" Term
+             | Expression "-" Term
+             | Term
+
+Term ::= Term "*" Factor
+       | Term "/" Factor
+       | Factor
+
+Factor ::= Constant
+		 | "(" Expression ")"
+
+Constant ::= Integer
+
+Integer ::= Digit | Integer Digit
+
+Digit ::= '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+
+Alphabet ::= 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M'
+           | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
+           | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm'
+           | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z'
